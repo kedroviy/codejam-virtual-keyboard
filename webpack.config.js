@@ -31,7 +31,7 @@ module.exports = {
     },
 
     plugins: [
-        new HtmlWebpackPlugin({ title: 'piskel-clonez' }),
+        new HtmlWebpackPlugin({ title: 'virtual-keyboard' }),
         new MiniCssExtractPlugin({ filename: '[name].css' }),
     ],
 };
