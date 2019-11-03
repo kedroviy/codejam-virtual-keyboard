@@ -66,11 +66,67 @@ export default class Keys {
                 .map(item => `<div class="simple-key">${item}</div>`)
                 .join('');
             keyboardFiveLine.innerHTML = keyRow5
-                .map(item => `<div class="simple-key">${item}</div>`)
+                .map(item => `<div class="">${item}</div>`)
                 .join('');
-            // eslint-disable-next-line no-console
-            console.log(keyRow1);
+            // eslint-disable-next-line no-plusplus
+            // for (let i = 0; i <= keyRow5.length; i++) {
+            //     if (keyRow5[i] === keyRow5[2]) {
+            //         space.className = 'space';
+            //     }
+            // }
+
+
+            console.log(keyRow5[2]);
         };
         createKeys();
+        if (!SPECIALS.includes(evt.code)) {
+            textarea.value += elem.querySelectorAll(':not(.hidden)')[1].textContent;
+        } else {
+            // eslint-disable-next-line default-case
+            switch (evt.code) {
+            case 'Backspace':
+                textarea.value = textarea.value.substr(0, textarea.value.length - 1);
+                break;
+            case 'Tab':
+                textarea.value += '    ';
+                break;
+            case 'Enter':
+                textarea.value += '\n';
+                break;
+            case 'CapsLock':
+                if (isCapsLockPressed && !evt.repeat) {
+                    removeActiveState(elem);
+                    isCapsLockPressed = false;
+                } else {
+                    addActiveState(elem);
+                    isCapsLockPressed = true;
+                }
+                toggleCase();
+                break;
+            case 'ShiftLeft':
+                if (!isShiftLeftPressed && !isShiftRightPressed) {
+                    addActiveState(elem);
+                    toggleCase();
+                    isShiftLeftPressed = true;
+                }
+                break;
+            case 'ShiftRight':
+                if (!isShiftRightPressed && !isShiftLeftPressed) {
+                    addActiveState(elem);
+                    toggleCase();
+                    isShiftRightPressed = true;
+                }
+                break;
+            }
+        }
+        if (evt.ctrlKey && event.altKey) toggleLang();
+
+
+        if (evt.code !== 'CapsLock' && evt.code !== 'ShiftLeft' && evt.code !== 'ShiftRight') {
+            addActiveState(elem);
+        } else {
+        }
+
+        evt.preventDefault();
     }
-}
+    }
