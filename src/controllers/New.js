@@ -1,1064 +1,1074 @@
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+export default class New {
+    // eslint-disable-next-line class-methods-use-this
+    render() {
+        // eslint-disable-next-line no-unused-vars
+        /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 
-// eslint-disable-next-line no-unused-vars
-const SPECIALS = ['Backspace', 'Tab', 'Enter', 'CapsLock', 'ShiftLeft', 'ShiftRight', 'AltLeft', 'AltRight', 'ControlLeft', 'ControlRight', 'Delete'];
+        const SPECIALS = ['Backspace', 'Tab', 'Enter', 'CapsLock', 'ShiftLeft', 'ShiftRight', 'AltLeft', 'AltRight', 'ControlLeft', 'ControlRight', 'Delete'];
 
-const ROWS = [];
+        const ROWS = [];
 
-ROWS[0] = [
-    {
-        className: 'Backquote',
-        eng:
+        ROWS[0] = [
+            {
+                className: 'Backquote',
+                eng:
         {
             caseDown: '`',
             caseUp: '~',
         },
-        rus:
+                rus:
         {
             caseDown: 'ё',
             caseUp: 'Ё',
         },
-    },
-    {
-        className: 'Digit1',
-        eng:
+            },
+            {
+                className: 'Digit1',
+                eng:
         {
             caseDown: '1',
             caseUp: '!',
         },
-        rus:
+                rus:
         {
             caseDown: '1',
             caseUp: '!',
         },
-    },
-    {
-        className: 'Digit2',
-        eng:
+            },
+            {
+                className: 'Digit2',
+                eng:
         {
             caseDown: '2',
             caseUp: '@',
         },
-        rus:
+                rus:
         {
             caseDown: '2',
             caseUp: '"',
         },
-    },
-    {
-        className: 'Digit3',
-        eng:
+            },
+            {
+                className: 'Digit3',
+                eng:
         {
             caseDown: '3',
             caseUp: '#',
         },
-        rus:
+                rus:
         {
             caseDown: '3',
             caseUp: '№',
         },
-    },
-    {
-        className: 'Digit4',
-        eng:
+            },
+            {
+                className: 'Digit4',
+                eng:
         {
             caseDown: '4',
             caseUp: '$',
         },
-        rus:
+                rus:
         {
             caseDown: '4',
             caseUp: ';',
         },
-    },
-    {
-        className: 'Digit5',
-        eng:
+            },
+            {
+                className: 'Digit5',
+                eng:
         {
             caseDown: '5',
             caseUp: '%',
         },
-        rus:
+                rus:
         {
             caseDown: '5',
             caseUp: '%',
         },
-    },
-    {
-        className: 'Digit6',
-        eng:
+            },
+            {
+                className: 'Digit6',
+                eng:
         {
             caseDown: '6',
             caseUp: '^',
         },
-        rus:
+                rus:
         {
             caseDown: '6',
             caseUp: ':',
         },
-    },
-    {
-        className: 'Digit7',
-        eng:
+            },
+            {
+                className: 'Digit7',
+                eng:
         {
             caseDown: '7',
             caseUp: '&',
         },
-        rus:
+                rus:
         {
             caseDown: '7',
             caseUp: '?',
         },
-    },
-    {
-        className: 'Digit8',
-        eng:
+            },
+            {
+                className: 'Digit8',
+                eng:
         {
             caseDown: '8',
             caseUp: '*',
         },
-        rus:
+                rus:
         {
             caseDown: '8',
             caseUp: '*',
         },
-    },
-    {
-        className: 'Digit9',
-        eng:
+            },
+            {
+                className: 'Digit9',
+                eng:
         {
             caseDown: '9',
             caseUp: '(',
         },
-        rus:
+                rus:
         {
             caseDown: '9',
             caseUp: '(',
         },
-    },
-    {
-        className: 'Digit0',
-        eng:
+            },
+            {
+                className: 'Digit0',
+                eng:
         {
             caseDown: '0',
             caseUp: ')',
         },
-        rus:
+                rus:
         {
             caseDown: '0',
             caseUp: ')',
         },
-    },
-    {
-        className: 'Minus',
-        eng:
+            },
+            {
+                className: 'Minus',
+                eng:
         {
             caseDown: '-',
             caseUp: '_',
         },
-        rus:
+                rus:
         {
             caseDown: '-',
             caseUp: '_',
         },
-    },
-    {
-        className: 'Equal',
-        eng:
+            },
+            {
+                className: 'Equal',
+                eng:
         {
             caseDown: '=',
             caseUp: '+',
         },
-        rus:
+                rus:
         {
             caseDown: '=',
             caseUp: '+',
         },
-    },
-    {
-        className: 'Backspace',
-        eng:
+            },
+            {
+                className: 'Backspace',
+                eng:
         {
             caseDown: 'Backspace',
             caseUp: 'Backspace',
         },
-        rus:
+                rus:
         {
             caseDown: 'Backspace',
             caseUp: 'Backspace',
         },
-    },
-];
+            },
+        ];
 
-ROWS[1] = [
-    {
-        className: 'Tab',
-        eng:
+        ROWS[1] = [
+            {
+                className: 'Tab',
+                eng:
         {
             caseDown: 'Tab',
             caseUp: 'Tab',
         },
-        rus:
+                rus:
         {
             caseDown: 'Tab',
             caseUp: 'Tab',
         },
-    },
-    {
-        className: 'KeyQ',
-        eng:
+            },
+            {
+                className: 'KeyQ',
+                eng:
         {
             caseDown: 'q',
             caseUp: 'Q',
         },
-        rus:
+                rus:
         {
             caseDown: 'й',
             caseUp: 'Й',
         },
-    },
-    {
-        className: 'KeyW',
-        eng:
+            },
+            {
+                className: 'KeyW',
+                eng:
         {
             caseDown: 'w',
             caseUp: 'W',
         },
-        rus:
+                rus:
         {
             caseDown: 'ц',
             caseUp: 'Ц',
         },
-    },
-    {
-        className: 'KeyE',
-        eng:
+            },
+            {
+                className: 'KeyE',
+                eng:
         {
             caseDown: 'e',
             caseUp: 'E',
         },
-        rus:
+                rus:
         {
             caseDown: 'у',
             caseUp: 'У',
         },
-    },
-    {
-        className: 'KeyR',
-        eng:
+            },
+            {
+                className: 'KeyR',
+                eng:
         {
             caseDown: 'r',
             caseUp: 'R',
         },
-        rus:
+                rus:
         {
             caseDown: 'к',
             caseUp: 'К',
         },
-    },
-    {
-        className: 'KeyT',
-        eng:
+            },
+            {
+                className: 'KeyT',
+                eng:
         {
             caseDown: 't',
             caseUp: 'T',
         },
-        rus:
+                rus:
         {
             caseDown: 'е',
             caseUp: 'Е',
         },
-    },
-    {
-        className: 'KeyY',
-        eng:
+            },
+            {
+                className: 'KeyY',
+                eng:
         {
             caseDown: 'y',
             caseUp: 'Y',
         },
-        rus:
+                rus:
         {
             caseDown: 'н',
             caseUp: 'Н',
         },
-    },
-    {
-        className: 'KeyU',
-        eng:
+            },
+            {
+                className: 'KeyU',
+                eng:
         {
             caseDown: 'u',
             caseUp: 'U',
         },
-        rus:
+                rus:
         {
             caseDown: 'г',
             caseUp: 'Г',
         },
-    },
-    {
-        className: 'KeyI',
-        eng:
+            },
+            {
+                className: 'KeyI',
+                eng:
         {
             caseDown: 'i',
             caseUp: 'I',
         },
-        rus:
+                rus:
         {
             caseDown: 'ш',
             caseUp: 'Ш',
         },
-    },
-    {
-        className: 'KeyO',
-        eng:
+            },
+            {
+                className: 'KeyO',
+                eng:
         {
             caseDown: 'o',
             caseUp: 'O',
         },
-        rus:
+                rus:
         {
             caseDown: 'щ',
             caseUp: 'Щ',
         },
-    },
-    {
-        className: 'KeyP',
-        eng:
+            },
+            {
+                className: 'KeyP',
+                eng:
         {
             caseDown: 'p',
             caseUp: 'P',
         },
-        rus:
+                rus:
         {
             caseDown: 'з',
             caseUp: 'З',
         },
-    },
-    {
-        className: 'BracketLeft',
-        eng:
+            },
+            {
+                className: 'BracketLeft',
+                eng:
         {
             caseDown: '[',
             caseUp: '{',
         },
-        rus:
+                rus:
         {
             caseDown: 'х',
             caseUp: 'Х',
         },
-    },
-    {
-        className: 'BracketRight',
-        eng:
+            },
+            {
+                className: 'BracketRight',
+                eng:
         {
             caseDown: ']',
             caseUp: '}',
         },
-        rus:
+                rus:
         {
             caseDown: 'ъ',
             caseUp: 'Ъ',
         },
-    },
-    {
-        className: 'Backslash',
-        eng:
+            },
+            {
+                className: 'Backslash',
+                eng:
         {
             caseDown: '\\',
             caseUp: '|',
         },
-        rus:
+                rus:
         {
             caseDown: '\\',
             caseUp: '/',
         },
-    },
-];
+            },
+        ];
 
-ROWS[2] = [
-    {
-        className: 'CapsLock',
-        eng:
+        ROWS[2] = [
+            {
+                className: 'CapsLock',
+                eng:
         {
             caseDown: 'CapsLock',
             caseUp: 'CapsLock',
         },
-        rus:
+                rus:
         {
             caseDown: 'CapsLock',
             caseUp: 'CapsLock',
         },
-    },
-    {
-        className: 'KeyA',
-        eng:
+            },
+            {
+                className: 'KeyA',
+                eng:
         {
             caseDown: 'a',
             caseUp: 'A',
         },
-        rus:
+                rus:
         {
             caseDown: 'ф',
             caseUp: 'Ф',
         },
-    },
-    {
-        className: 'KeyS',
-        eng:
+            },
+            {
+                className: 'KeyS',
+                eng:
         {
             caseDown: 's',
             caseUp: 'S',
         },
-        rus:
+                rus:
         {
             caseDown: 'ы',
             caseUp: 'Ы',
         },
-    },
-    {
-        className: 'KeyD',
-        eng:
+            },
+            {
+                className: 'KeyD',
+                eng:
         {
             caseDown: 'd',
             caseUp: 'D',
         },
-        rus:
+                rus:
         {
             caseDown: 'в',
             caseUp: 'В',
         },
-    },
-    {
-        className: 'KeyF',
-        eng:
+            },
+            {
+                className: 'KeyF',
+                eng:
         {
             caseDown: 'f',
             caseUp: 'F',
         },
-        rus:
+                rus:
         {
             caseDown: 'а',
             caseUp: 'А',
         },
-    },
-    {
-        className: 'KeyG',
-        eng:
+            },
+            {
+                className: 'KeyG',
+                eng:
         {
             caseDown: 'g',
             caseUp: 'G',
         },
-        rus:
+                rus:
         {
             caseDown: 'п',
             caseUp: 'П',
         },
-    },
-    {
-        className: 'KeyH',
-        eng:
+            },
+            {
+                className: 'KeyH',
+                eng:
         {
             caseDown: 'h',
             caseUp: 'H',
         },
-        rus:
+                rus:
         {
             caseDown: 'р',
             caseUp: 'Р',
         },
-    },
-    {
-        className: 'KeyJ',
-        eng:
+            },
+            {
+                className: 'KeyJ',
+                eng:
         {
             caseDown: 'j',
             caseUp: 'J',
         },
-        rus:
+                rus:
         {
             caseDown: 'о',
             caseUp: 'О',
         },
-    },
-    {
-        className: 'KeyK',
-        eng:
+            },
+            {
+                className: 'KeyK',
+                eng:
         {
             caseDown: 'k',
             caseUp: 'K',
         },
-        rus:
+                rus:
         {
             caseDown: 'л',
             caseUp: 'Л',
         },
-    },
-    {
-        className: 'KeyL',
-        eng:
+            },
+            {
+                className: 'KeyL',
+                eng:
         {
             caseDown: 'l',
             caseUp: 'L',
         },
-        rus:
+                rus:
         {
             caseDown: 'д',
             caseUp: 'Д',
         },
-    },
-    {
-        className: 'Semicolon',
-        eng:
+            },
+            {
+                className: 'Semicolon',
+                eng:
         {
             caseDown: ';',
             caseUp: ':',
         },
-        rus:
+                rus:
         {
             caseDown: 'ж',
             caseUp: 'Ж',
         },
-    },
-    {
-        className: 'Quote',
-        eng:
+            },
+            {
+                className: 'Quote',
+                eng:
         {
             caseDown: '\'',
             caseUp: '"',
         },
-        rus:
+                rus:
         {
             caseDown: 'э',
             caseUp: 'Э',
         },
-    },
-    {
-        className: 'Enter',
-        eng:
+            },
+            {
+                className: 'Enter',
+                eng:
         {
             caseDown: 'Enter',
             caseUp: 'Enter',
         },
-        rus:
+                rus:
         {
             caseDown: 'Enter',
             caseUp: 'Enter',
         },
-    },
-];
+            },
+        ];
 
-ROWS[3] = [
-    {
-        className: 'ShiftLeft',
-        eng:
+        ROWS[3] = [
+            {
+                className: 'ShiftLeft',
+                eng:
         {
             caseDown: 'Shift',
             caseUp: 'Shift',
         },
-        rus:
+                rus:
         {
             caseDown: 'Shift',
             caseUp: 'Shift',
         },
-    },
-    {
-        className: 'KeyZ',
-        eng:
+            },
+            {
+                className: 'KeyZ',
+                eng:
         {
             caseDown: 'z',
             caseUp: 'Z',
         },
-        rus:
+                rus:
         {
             caseDown: 'я',
             caseUp: 'Я',
         },
-    },
-    {
-        className: 'KeyX',
-        eng:
+            },
+            {
+                className: 'KeyX',
+                eng:
         {
             caseDown: 'x',
             caseUp: 'X',
         },
-        rus:
+                rus:
         {
             caseDown: 'ч',
             caseUp: 'Ч',
         },
-    },
-    {
-        className: 'KeyC',
-        eng:
+            },
+            {
+                className: 'KeyC',
+                eng:
         {
             caseDown: 'c',
             caseUp: 'C',
         },
-        rus:
+                rus:
         {
             caseDown: 'с',
             caseUp: 'С',
         },
-    },
-    {
-        className: 'KeyV',
-        eng:
+            },
+            {
+                className: 'KeyV',
+                eng:
         {
             caseDown: 'v',
             caseUp: 'V',
         },
-        rus:
+                rus:
         {
             caseDown: 'м',
             caseUp: 'М',
         },
-    },
-    {
-        className: 'KeyB',
-        eng:
+            },
+            {
+                className: 'KeyB',
+                eng:
         {
             caseDown: 'b',
             caseUp: 'B',
         },
-        rus:
+                rus:
         {
             caseDown: 'и',
             caseUp: 'И',
         },
-    },
-    {
-        className: 'KeyN',
-        eng:
+            },
+            {
+                className: 'KeyN',
+                eng:
         {
             caseDown: 'n',
             caseUp: 'N',
         },
-        rus:
+                rus:
         {
             caseDown: 'т',
             caseUp: 'Т',
         },
-    },
-    {
-        className: 'KeyM',
-        eng:
+            },
+            {
+                className: 'KeyM',
+                eng:
         {
             caseDown: 'm',
             caseUp: 'M',
         },
-        rus:
+                rus:
         {
             caseDown: 'ь',
             caseUp: 'Ь',
         },
-    },
-    {
-        className: 'Comma',
-        eng:
+            },
+            {
+                className: 'Comma',
+                eng:
         {
             caseDown: ',',
             caseUp: '<',
         },
-        rus:
+                rus:
         {
             caseDown: 'б',
             caseUp: 'Б',
         },
-    },
-    {
-        className: 'Period',
-        eng:
+            },
+            {
+                className: 'Period',
+                eng:
         {
             caseDown: '.',
             caseUp: '>',
         },
-        rus:
+                rus:
         {
             caseDown: 'ю',
             caseUp: 'Ю',
         },
-    },
-    {
-        className: 'Slash',
-        eng:
+            },
+            {
+                className: 'Slash',
+                eng:
         {
             caseDown: '/',
             caseUp: '?',
         },
-        rus:
+                rus:
         {
             caseDown: '.',
             caseUp: ',',
         },
-    },
-    {
-        className: 'ArrowUp',
-        eng:
+            },
+            {
+                className: 'ArrowUp',
+                eng:
         {
             caseDown: '▲',
             caseUp: '▲',
         },
-        rus:
+                rus:
         {
             caseDown: '▲',
             caseUp: '▲',
         },
-    },
-    {
-        className: 'ShiftRight',
-        eng:
+            },
+            {
+                className: 'ShiftRight',
+                eng:
         {
             caseDown: 'Shift',
             caseUp: 'Shift',
         },
-        rus:
+                rus:
         {
             caseDown: 'Shift',
             caseUp: 'Shift',
         },
-    },
-];
+            },
+        ];
 
-ROWS[4] = [
-    {
-        className: 'ControlLeft',
-        eng:
+        ROWS[4] = [
+            {
+                className: 'ControlLeft',
+                eng:
         {
             caseDown: 'Ctrl',
             caseUp: 'Ctrl',
         },
-        rus:
+                rus:
         {
             caseDown: 'Ctrl',
             caseUp: 'Ctrl',
         },
-    },
-    {
-        className: 'AltLeft',
-        eng:
+            },
+            {
+                className: 'AltLeft',
+                eng:
         {
             caseDown: 'Alt',
             caseUp: 'Alt',
         },
-        rus:
+                rus:
         {
             caseDown: 'Alt',
             caseUp: 'Alt',
         },
-    },
-    {
-        className: 'Space',
-        eng:
+            },
+            {
+                className: 'Space',
+                eng:
         {
             caseDown: ' ',
             caseUp: ' ',
         },
-        rus:
+                rus:
         {
             caseDown: ' ',
             caseUp: ' ',
         },
-    },
-    {
-        className: 'AltRight',
-        eng:
+            },
+            {
+                className: 'AltRight',
+                eng:
         {
             caseDown: 'Alt',
             caseUp: 'Alt',
         },
-        rus:
+                rus:
         {
             caseDown: 'Alt',
             caseUp: 'Alt',
         },
-    },
-    {
-        className: 'ArrowLeft',
-        eng:
+            },
+            {
+                className: 'ArrowLeft',
+                eng:
         {
             caseDown: '◄',
             caseUp: '◄',
         },
-        rus:
+                rus:
         {
             caseDown: '◄',
             caseUp: '◄',
         },
-    },
-    {
-        className: 'ArrowDown',
-        eng:
+            },
+            {
+                className: 'ArrowDown',
+                eng:
         {
             caseDown: '▼',
             caseUp: '▼',
         },
-        rus:
+                rus:
         {
             caseDown: '▼',
             caseUp: '▼',
         },
-    },
-    {
-        className: 'ArrowRight',
-        eng:
+            },
+            {
+                className: 'ArrowRight',
+                eng:
         {
             caseDown: '►',
             caseUp: '►',
         },
-        rus:
+                rus:
         {
             caseDown: '►',
             caseUp: '►',
         },
-    },
-    {
-        className: 'ControlRight',
-        eng:
+            },
+            {
+                className: 'ControlRight',
+                eng:
         {
             caseDown: 'Ctrl',
             caseUp: 'Ctrl',
         },
-        rus:
+                rus:
         {
             caseDown: 'Ctrl',
             caseUp: 'Ctrl',
         },
-    },
-];
+            },
+        ];
+        const isShiftLeftPressed = false;
+        const isShiftRightPressed = false;
+        const isCapsLockPressed = false;
+        let caseState = 'caseDown';
+        var lang = 'eng';
+        document.body.insertAdjacentHTML('afterBegin',
+            '<div class="wrapper"><textarea id="textarea" class="input" rows="5" cols="50"></textarea><div id="keyboard" class="keyboard"></div></div>');
 
-const isShiftLeftPressed = false;
-const isShiftRightPressed = false;
-const isCapsLockPressed = false;
-let caseState = 'caseDown';
-document.body.insertAdjacentHTML('afterBegin',
-    '<div class="wrapper"><textarea id="textarea" class="input" rows="5" cols="50"></textarea><div id="keyboard" class="keyboard"></div></div>');
-
-const fragment = document.createDocumentFragment();
-
-for (let i = 0; i < ROWS.length; i++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
-    // eslint-disable-next-line no-cond-assign
-    if (ROWS[i] === [4]) {
-        row.className = 'row-1';
-    }
-    for (let j = 0; j < ROWS[i].length; j++) {
-        const div = document.createElement('div');
-        div.classList.add('simple-key');
-        div.classList.add(ROWS[i][j].className);
-        div.insertAdjacentHTML('afterBegin',
-            `<span class="rus hidden"><span class="caseDown hidden">${ROWS[i][j].rus.caseDown}</span><span class="caseUp hidden">${ROWS[i][j].rus.caseUp}</span></span><span class="eng"><span class="caseDown">${ROWS[i][j].eng.caseDown}</span><span class="caseUp hidden">${ROWS[i][j].eng.caseUp}</span></span>`);
-        row.appendChild(div);
-    }
-    fragment.appendChild(row);
-}
-
-keyboard.appendChild(fragment);
-
-
-const addActiveState = (element) => {
-    element.classList.add('active');
-};
-
-const removeActiveState = (element) => {
-    element.classList.remove('active');
-};
-
-const toggleCase = () => {
-    const langSpans = keyboard.querySelectorAll(`div > .${lang}`);
-    for (let i = 0; i < langSpans.length; i++) {
-        langSpans[i].querySelectorAll('span')[0].classList.toggle('hidden');
-        langSpans[i].querySelectorAll('span')[1].classList.toggle('hidden');
-    }
-    if (caseState === 'caseUp') {
-        caseState = 'caseDown';
-    } else {
-        caseState = 'caseUp';
-    }
-};
-
-function toggleLang() {
-    var langSpans = keyboard.querySelectorAll(`div > .${lang}`);
-    for (var i = 0; i < langSpans.length; i++) {
-        langSpans[i].classList.toggle('hidden');
-        langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
-    }
-    if (lang === 'eng') {
-        lang = 'rus';
-        localStorage.setItem('lang', 'rus');
-    } else {
-        lang = 'eng';
-        localStorage.setItem('lang', 'eng');
-    }
-    var langSpans = keyboard.querySelectorAll(`div > .${lang}`);
-    for (var i = 0; i < langSpans.length; i++) {
-        langSpans[i].classList.toggle('hidden');
-        langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
-    }
-}
-
-
-const keyUpHandler = (evt) => {
-    const elem = keyboard.getElementsByClassName(evt.code)[0];
-    if (!elem) return;
-    if (evt.code !== 'CapsLock') removeActiveState(elem.closest('div'));
-    if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
-        toggleCase();
-        if (evt.code === 'ShiftLeft') {
-            isShiftLeftPressed = false;
-            removeActiveState(elem.closest('div'));
-        } else if (evt.code === 'ShiftRight') {
-            isShiftRightPressed = false;
-            removeActiveState(elem.closest('div'));
-        }
-    }
-};
-
-function mouseUpHandler(evt) {
-    removeActiveState(evt.target.closest('div'));
-}
-
-var lang = 'eng';
-if (localStorage.lang === 'rus') {
-    toggleLang();
-}
-
-document.addEventListener('keyup', keyUpHandler);
-
-document.addEventListener('keydown',
-    (evt) => {
-        let elem = null;
-
-        elem = keyboard.getElementsByClassName(evt.code)[0];
-        if (!elem) {
-            evt.preventDefault();
-            return;
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < ROWS.length; i++) {
+            const row = document.createElement('div');
+            row.classList.add('row');
+            // eslint-disable-next-line no-cond-assign
+            if (ROWS[i] === [4]) {
+                row.className = 'row-1';
+            }
+            for (let j = 0; j < ROWS[i].length; j++) {
+                const div = document.createElement('div');
+                div.classList.add('simple-key');
+                div.classList.add(ROWS[i][j].className);
+                div.insertAdjacentHTML('afterBegin',
+                    `<span class="rus hidden"><span class="caseDown hidden">${ROWS[i][j].rus.caseDown}</span><span class="caseUp hidden">${ROWS[i][j].rus.caseUp}</span></span><span class="eng"><span class="caseDown">${ROWS[i][j].eng.caseDown}</span><span class="caseUp hidden">${ROWS[i][j].eng.caseUp}</span></span>`);
+                row.appendChild(div);
+            }
+            fragment.appendChild(row);
         }
 
+        // eslint-disable-next-line no-undef
+        keyboard.appendChild(fragment);
 
-        if (!SPECIALS.includes(evt.code)) {
-            textarea.value += elem.querySelectorAll(':not(.hidden)')[1].textContent;
-        } else {
-            // eslint-disable-next-line default-case
-            switch (evt.code) {
-            case 'Backspace':
-                textarea.value = textarea.value.substr(0, textarea.value.length - 1);
-                break;
-            case 'Tab':
-                textarea.value += '    ';
-                break;
-            case 'Enter':
-                textarea.value += '\n';
-                break;
-            case 'CapsLock':
-                if (isCapsLockPressed && !evt.repeat) {
-                    removeActiveState(elem);
-                    isCapsLockPressed = false;
-                } else {
-                    addActiveState(elem);
-                    isCapsLockPressed = true;
-                }
-                toggleCase();
-                break;
-            case 'ShiftLeft':
-                if (!isShiftLeftPressed && !isShiftRightPressed) {
-                    addActiveState(elem);
-                    toggleCase();
-                    isShiftLeftPressed = true;
-                }
-                break;
-            case 'ShiftRight':
-                if (!isShiftRightPressed && !isShiftLeftPressed) {
-                    addActiveState(elem);
-                    toggleCase();
-                    isShiftRightPressed = true;
-                }
-                break;
+
+        const addActiveState = (element) => {
+            element.classList.add('press');
+        };
+
+        const removeActiveState = (element) => {
+            element.classList.remove('press');
+        };
+
+        const toggleCase = () => {
+            // eslint-disable-next-line no-undef
+            const langSpans = keyboard.querySelectorAll(`div > .${lang}`);
+            // eslint-disable-next-line no-plusplus
+            for (let i = 0; i < langSpans.length; i++) {
+                langSpans[i].querySelectorAll('span')[0].classList.toggle('hidden');
+                langSpans[i].querySelectorAll('span')[1].classList.toggle('hidden');
+            }
+            if (caseState === 'caseUp') {
+                caseState = 'caseDown';
+            } else {
+                caseState = 'caseUp';
+            }
+        };
+        let i = 0;
+        function toggleLang() {
+            // eslint-disable-next-line no-var
+            // eslint-disable-next-line no-undef
+            var langSpans = keyboard.querySelectorAll(`div > .${lang}`);
+            for (i = 0; i < langSpans.length; i++) {
+                langSpans[i].classList.toggle('hidden');
+                langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
+            }
+            if (lang === 'eng') {
+                lang = 'rus';
+                localStorage.setItem('lang', 'rus');
+            } else {
+                lang = 'eng';
+                localStorage.setItem('lang', 'eng');
+            }
+            // eslint-disable-next-line no-redeclare
+            var langSpans = keyboard.querySelectorAll(`div > .${lang}`);
+            for (i = 0; i < langSpans.length; i++) {
+                langSpans[i].classList.toggle('hidden');
+                langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
             }
         }
-        if (evt.ctrlKey && event.altKey) toggleLang();
 
 
-        if (evt.code !== 'CapsLock' && evt.code !== 'ShiftLeft' && evt.code !== 'ShiftRight') {
-            addActiveState(elem);
-        } else {
+        const keyUpHandler = (evt) => {
+            const elem = keyboard.getElementsByClassName(evt.code)[0];
+            if (!elem) return;
+            if (evt.code !== 'CapsLock') removeActiveState(elem.closest('div'));
+            if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
+                toggleCase();
+                if (evt.code === 'ShiftLeft') {
+                    // eslint-disable-next-line no-const-assign
+                    isShiftLeftPressed = false;
+                    removeActiveState(elem.closest('div'));
+                } else if (evt.code === 'ShiftRight') {
+                    // eslint-disable-next-line no-const-assign
+                    isShiftRightPressed = false;
+                    removeActiveState(elem.closest('div'));
+                }
+            }
+        };
+
+        function mouseUpHandler(evt) {
+            removeActiveState(evt.target.closest('div'));
         }
 
-        evt.preventDefault();
-    });
 
-keyboard.addEventListener('mouseup',
-    (evt) => {
-        if (evt.target.tagName !== 'SPAN') return;
+        if (localStorage.lang === 'rus') {
+            toggleLang();
+        }
 
-        const elem = evt.target.closest('div');
+        document.addEventListener('keyup', keyUpHandler);
+
+        document.addEventListener('keydown',
+            (evt) => {
+                let elem = null;
+
+                elem = keyboard.getElementsByClassName(evt.code)[0];
+                if (!elem) {
+                    evt.preventDefault();
+                    return;
+                }
 
 
-        if (!SPECIALS.includes(elem.classList[1])) {
-            textarea.value += evt.target.textContent;
-        } else {
-            // eslint-disable-next-line default-case
-            switch (elem.classList[1]) {
-            case 'Backspace':
-                textarea.value = textarea.value.substr(0, textarea.value.length - 1);
-                break;
-            case 'Tab':
-                textarea.value += '    ';
-                break;
-            case 'Enter':
-                textarea.value += '\n';
-                break;
-            case 'CapsLock':
-                if (isCapsLockPressed) {
-                    removeActiveState(evt.target.closest('div'));
-                    isCapsLockPressed = false;
+                if (!SPECIALS.includes(evt.code)) {
+                    textarea.value += elem.querySelectorAll(':not(.hidden)')[1].textContent;
                 } else {
+                    // eslint-disable-next-line default-case
+                    switch (evt.code) {
+                    case 'Backspace':
+                        textarea.value = textarea.value.substr(0, textarea.value.length - 1);
+                        break;
+                    case 'Tab':
+                        textarea.value += '    ';
+                        break;
+                    case 'Enter':
+                        textarea.value += '\n';
+                        break;
+                    case 'CapsLock':
+                        if (isCapsLockPressed && !evt.repeat) {
+                            removeActiveState(elem);
+                            isCapsLockPressed = false;
+                        } else {
+                            addActiveState(elem);
+                            isCapsLockPressed = true;
+                        }
+                        toggleCase();
+                        break;
+                    case 'ShiftLeft':
+                        if (!isShiftLeftPressed && !isShiftRightPressed) {
+                            addActiveState(elem);
+                            toggleCase();
+                            // eslint-disable-next-line no-const-assign
+                            isShiftLeftPressed = true;
+                        }
+                        break;
+                    case 'ShiftRight':
+                        if (!isShiftRightPressed && !isShiftLeftPressed) {
+                            addActiveState(elem);
+                            toggleCase();
+                            isShiftRightPressed = true;
+                        }
+                        break;
+                    }
+                }
+                if (evt.ctrlKey && event.altKey) toggleLang();
+
+
+                if (evt.code !== 'CapsLock' && evt.code !== 'ShiftLeft' && evt.code !== 'ShiftRight') {
+                    addActiveState(elem);
+                // eslint-disable-next-line no-empty
+                } else {
+                }
+
+                evt.preventDefault();
+            });
+
+        // eslint-disable-next-line no-undef
+        keyboard.addEventListener('mouseup',
+            (evt) => {
+                if (evt.target.tagName !== 'SPAN') return;
+
+                const elem = evt.target.closest('div');
+
+
+                if (!SPECIALS.includes(elem.classList[1])) {
+                    textarea.value += evt.target.textContent;
+                } else {
+                    // eslint-disable-next-line default-case
+                    switch (elem.classList[1]) {
+                    case 'Backspace':
+                        textarea.value = textarea.value.substr(0, textarea.value.length - 1);
+                        break;
+                    case 'Tab':
+                        textarea.value += '    ';
+                        break;
+                    case 'Enter':
+                        textarea.value += '\n';
+                        break;
+                    case 'CapsLock':
+                        if (isCapsLockPressed) {
+                            removeActiveState(evt.target.closest('div'));
+                            isCapsLockPressed = false;
+                        } else {
+                            addActiveState(evt.target.closest('div'));
+                            isCapsLockPressed = true;
+                        }
+                        toggleCase();
+                        break;
+                    case 'ShiftLeft':
+                        if (!isShiftLeftPressed) {
+                            toggleCase();
+                            isShiftLeftPressed = true;
+                        }
+                        break;
+                    case 'ShiftRight':
+                        if (!isShiftRightPressed) {
+                            toggleCase();
+                            isShiftRightPressed = true;
+                        }
+                        break;
+                    }
+                }
+
+
+                if (elem.classList[1] !== 'CapsLock') {
                     addActiveState(evt.target.closest('div'));
-                    isCapsLockPressed = true;
+                    setTimeout(
+                        () => {
+                            removeActiveState(evt.target.closest('div'));
+                            if (isShiftLeftPressed) {
+                                toggleCase();
+                                isShiftLeftPressed = false;
+                            }
+                            if (isShiftRightPressed) {
+                                toggleCase();
+                                isShiftRightPressed = false;
+                            }
+                        },
+                        300,
+                    );
+                // eslint-disable-next-line no-empty
+                } else {
                 }
-                toggleCase();
-                break;
-            case 'ShiftLeft':
-                if (!isShiftLeftPressed) {
-                    toggleCase();
-                    isShiftLeftPressed = true;
-                }
-                break;
-            case 'ShiftRight':
-                if (!isShiftRightPressed) {
-                    toggleCase();
-                    isShiftRightPressed = true;
-                }
-                break;
-            }
-        }
-
-
-        if (elem.classList[1] !== 'CapsLock') {
-            addActiveState(evt.target.closest('div'));
-            setTimeout(
-                () => {
-                    removeActiveState(evt.target.closest('div'));
-                    if (isShiftLeftPressed) {
-                        toggleCase();
-                        isShiftLeftPressed = false;
-                    }
-                    if (isShiftRightPressed) {
-                        toggleCase();
-                        isShiftRightPressed = false;
-                    }
-                },
-                300,
-            );
-        } else {
-        }
-
-        if (elem.classList[1] !== 'MetaKey') evt.preventDefault();
-    });
-
-
-const getKey = () => {
-    document.addEventListener('keydown', (event) => {
-        console.log(event.keyCode);
-    });
-};
-getKey();
+                if (elem.classList[1] !== 'MetaKey') evt.preventDefault();
+            });
+    }
+}
