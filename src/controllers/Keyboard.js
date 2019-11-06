@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export default class Keyboard {
     // eslint-disable-next-line class-methods-use-this
     render() {
@@ -836,6 +837,7 @@ export default class Keyboard {
         let lang = 'eng';
 
         document.body.insertAdjacentHTML('afterBegin',
+
             '<div class="wrapper"><textarea id="textarea" class="input" rows="5" cols="50"></textarea><div id="keyboard" class="keyboard"></div></div>');
 
         const fragment = document.createDocumentFragment();
@@ -843,7 +845,7 @@ export default class Keyboard {
             const row = document.createElement('div');
             row.classList.add('row');
             if (ROWS[i] === [4]) {
-                row.className = 'row-1';
+                row.className = 'row';
             }
             for (let j = 0; j < ROWS[i].length; j++) {
                 const div = document.createElement('div');
@@ -856,6 +858,7 @@ export default class Keyboard {
             fragment.appendChild(row);
         }
 
+        // eslint-disable-next-line no-undef
         keyboard.appendChild(fragment);
 
         const addActiveState = (element) => {
@@ -867,6 +870,7 @@ export default class Keyboard {
         };
 
         const toggleCase = () => {
+            // eslint-disable-next-line no-undef
             const langSpans = keyboard.querySelectorAll(`div > .${lang}`);
             for (let i = 0; i < langSpans.length; i++) {
                 langSpans[i].querySelectorAll('span')[0].classList.toggle('hidden');
@@ -881,7 +885,8 @@ export default class Keyboard {
 
         let i = 0;
         function toggleLang() {
-            let langSpans = keyboard.querySelectorAll(`div > .${lang}`);
+            // eslint-disable-next-line no-undef
+            const langSpans = keyboard.querySelectorAll(`div > .${lang}`);
             for (i = 0; i < langSpans.length; i++) {
                 langSpans[i].classList.toggle('hidden');
                 langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
@@ -894,7 +899,8 @@ export default class Keyboard {
                 localStorage.setItem('lang', 'eng');
             }
 
-            let langSpanses = keyboard.querySelectorAll(`div > .${lang}`);
+            // eslint-disable-next-line no-undef
+            const langSpanses = keyboard.querySelectorAll(`div > .${lang}`);
             for (i = 0; i < langSpanses.length; i++) {
                 langSpanses[i].classList.toggle('hidden');
                 langSpanses[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
@@ -902,6 +908,7 @@ export default class Keyboard {
         }
 
         const keyUpHandler = (evt) => {
+            // eslint-disable-next-line no-undef
             const elem = keyboard.getElementsByClassName(evt.code)[0];
             if (!elem) return;
             if (evt.code !== 'CapsLock') removeActiveState(elem.closest('div'));
@@ -926,6 +933,8 @@ export default class Keyboard {
         document.addEventListener('keydown',
             (evt) => {
                 let elem = null;
+                // eslint-disable-next-line prefer-destructuring
+                // eslint-disable-next-line no-undef
                 // eslint-disable-next-line prefer-destructuring
                 elem = keyboard.getElementsByClassName(evt.code)[0];
                 if (!elem) {
@@ -973,11 +982,13 @@ export default class Keyboard {
                         break;
                     }
                 }
+                // eslint-disable-next-line no-restricted-globals
                 if (evt.ctrlKey && event.altKey) toggleLang();
 
 
                 if (evt.code !== 'CapsLock' && evt.code !== 'ShiftLeft' && evt.code !== 'ShiftRight') {
                     addActiveState(elem);
+                // eslint-disable-next-line no-empty
                 } else {
                 }
 
