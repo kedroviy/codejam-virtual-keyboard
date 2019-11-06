@@ -1,6 +1,4 @@
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
-export default class New {
+export default class Keyboard {
     // eslint-disable-next-line class-methods-use-this
     render() {
         // eslint-disable-next-line no-unused-vars
@@ -830,11 +828,13 @@ export default class New {
         },
             },
         ];
-        const isShiftLeftPressed = false;
-        const isShiftRightPressed = false;
-        const isCapsLockPressed = false;
+
+        let isShiftLeftPressed = false;
+        let isShiftRightPressed = false;
+        let isCapsLockPressed = false;
         let caseState = 'caseDown';
-        var lang = 'eng';
+        let lang = 'eng';
+
         document.body.insertAdjacentHTML('afterBegin',
             '<div class="wrapper"><textarea id="textarea" class="input" rows="5" cols="50"></textarea><div id="keyboard" class="keyboard"></div></div>');
 
@@ -842,7 +842,6 @@ export default class New {
         for (let i = 0; i < ROWS.length; i++) {
             const row = document.createElement('div');
             row.classList.add('row');
-            // eslint-disable-next-line no-cond-assign
             if (ROWS[i] === [4]) {
                 row.className = 'row-1';
             }
@@ -857,9 +856,7 @@ export default class New {
             fragment.appendChild(row);
         }
 
-        // eslint-disable-next-line no-undef
         keyboard.appendChild(fragment);
-
 
         const addActiveState = (element) => {
             element.classList.add('press');
@@ -870,9 +867,7 @@ export default class New {
         };
 
         const toggleCase = () => {
-            // eslint-disable-next-line no-undef
             const langSpans = keyboard.querySelectorAll(`div > .${lang}`);
-            // eslint-disable-next-line no-plusplus
             for (let i = 0; i < langSpans.length; i++) {
                 langSpans[i].querySelectorAll('span')[0].classList.toggle('hidden');
                 langSpans[i].querySelectorAll('span')[1].classList.toggle('hidden');
@@ -883,11 +878,10 @@ export default class New {
                 caseState = 'caseUp';
             }
         };
+
         let i = 0;
         function toggleLang() {
-            // eslint-disable-next-line no-var
-            // eslint-disable-next-line no-undef
-            var langSpans = keyboard.querySelectorAll(`div > .${lang}`);
+            let langSpans = keyboard.querySelectorAll(`div > .${lang}`);
             for (i = 0; i < langSpans.length; i++) {
                 langSpans[i].classList.toggle('hidden');
                 langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
@@ -899,14 +893,13 @@ export default class New {
                 lang = 'eng';
                 localStorage.setItem('lang', 'eng');
             }
-            // eslint-disable-next-line no-redeclare
-            var langSpans = keyboard.querySelectorAll(`div > .${lang}`);
-            for (i = 0; i < langSpans.length; i++) {
-                langSpans[i].classList.toggle('hidden');
-                langSpans[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
+
+            let langSpanses = keyboard.querySelectorAll(`div > .${lang}`);
+            for (i = 0; i < langSpanses.length; i++) {
+                langSpanses[i].classList.toggle('hidden');
+                langSpanses[i].querySelectorAll(`span.${caseState}`)[0].classList.toggle('hidden');
             }
         }
-
 
         const keyUpHandler = (evt) => {
             const elem = keyboard.getElementsByClassName(evt.code)[0];
@@ -915,21 +908,14 @@ export default class New {
             if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
                 toggleCase();
                 if (evt.code === 'ShiftLeft') {
-                    // eslint-disable-next-line no-const-assign
                     isShiftLeftPressed = false;
                     removeActiveState(elem.closest('div'));
                 } else if (evt.code === 'ShiftRight') {
-                    // eslint-disable-next-line no-const-assign
                     isShiftRightPressed = false;
                     removeActiveState(elem.closest('div'));
                 }
             }
         };
-
-        function mouseUpHandler(evt) {
-            removeActiveState(evt.target.closest('div'));
-        }
-
 
         if (localStorage.lang === 'rus') {
             toggleLang();
@@ -940,13 +926,12 @@ export default class New {
         document.addEventListener('keydown',
             (evt) => {
                 let elem = null;
-
+                // eslint-disable-next-line prefer-destructuring
                 elem = keyboard.getElementsByClassName(evt.code)[0];
                 if (!elem) {
                     evt.preventDefault();
                     return;
                 }
-
 
                 if (!SPECIALS.includes(evt.code)) {
                     textarea.value += elem.querySelectorAll(':not(.hidden)')[1].textContent;
@@ -976,7 +961,6 @@ export default class New {
                         if (!isShiftLeftPressed && !isShiftRightPressed) {
                             addActiveState(elem);
                             toggleCase();
-                            // eslint-disable-next-line no-const-assign
                             isShiftLeftPressed = true;
                         }
                         break;
@@ -994,20 +978,17 @@ export default class New {
 
                 if (evt.code !== 'CapsLock' && evt.code !== 'ShiftLeft' && evt.code !== 'ShiftRight') {
                     addActiveState(elem);
-                // eslint-disable-next-line no-empty
                 } else {
                 }
 
                 evt.preventDefault();
             });
 
-        // eslint-disable-next-line no-undef
-        keyboard.addEventListener('mouseup',
+        keyboard.addEventListener('mousedown',
             (evt) => {
                 if (evt.target.tagName !== 'SPAN') return;
 
                 const elem = evt.target.closest('div');
-
 
                 if (!SPECIALS.includes(elem.classList[1])) {
                     textarea.value += evt.target.textContent;

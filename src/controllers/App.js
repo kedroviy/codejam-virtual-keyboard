@@ -1,8 +1,7 @@
-import New from './New';
+import Keyboard from './Keyboard';
 
 const app = () => {
-    const news = new New();
-    news.render();
-
+    const keyboard = new Keyboard();
+    keyboard.render();
 };
 export default app;
